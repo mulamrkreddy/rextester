@@ -1,0 +1,1 @@
+This is Visual studio 2010, asp.net mvc 2 solution.

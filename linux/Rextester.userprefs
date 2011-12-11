@@ -1,0 +1,20 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ExecutionEngine/Engine.cs">
+    <Files>
+      <File FileName="ExecutionEngine/Engine.cs" Line="349" Column="47" />
+      <File FileName="ExecutionEngine/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="RextesterService/parent.py" Line="40" Column="29" />
+      <File FileName="RextesterService/Global.asax" Line="1" Column="1" />
+      <File FileName="RextesterService/Global.asax.cs" Line="1" Column="1" />
+      <File FileName="RextesterService/Default.aspx.cs" Line="1" Column="1" />
+      <File FileName="RextesterService/Default.aspx.designer.cs" Line="21" Column="1" />
+      <File FileName="RextesterService/Service.asmx" Line="136" Column="3" />
+      <File FileName="RextesterService/web.config" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

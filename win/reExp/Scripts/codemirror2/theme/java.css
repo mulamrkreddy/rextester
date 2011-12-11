@@ -1,0 +1,25 @@
+﻿.cm-s-java span.cm-keyword {font-weight: bold; color: purple;}
+.cm-s-java span.cm-atom {color: purple;}
+.cm-s-java span.cm-number {color: black;}
+.cm-s-java span.cm-def {color: #00CCCC;}
+.cm-s-java span.cm-variable {color: black;}
+.cm-s-java span.cm-variable-2 {color: black;}
+.cm-s-java span.cm-variable-3 {color:black;}
+.cm-s-java span.cm-property {color: black;}
+.cm-s-java span.cm-operator {color: purple;}
+.cm-s-java span.cm-comment {color: green;}
+.cm-s-java span.cm-string {color: blue;}
+.cm-s-java span.cm-string-2 {color: blue;}
+.cm-s-java span.cm-meta {color:  #FF1717;}
+.cm-s-java span.cm-error {color: #f00;}
+.cm-s-java span.cm-qualifier {color: #555;}
+.cm-s-java span.cm-builtin {color: #30a;}
+.cm-s-java span.cm-bracket {color: black;}
+.cm-s-java span.cm-tag {color: #170;}
+.cm-s-java span.cm-attribute {color: #00c;}
+
+.CodeMirror-matchingbracket{
+	border:1px solid #cccccc;
+	background:#cccccc;
+	color:black !important;
+}

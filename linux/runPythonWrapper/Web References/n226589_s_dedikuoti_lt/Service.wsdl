@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://rextester.com/" name="Service" targetNamespace="http://rextester.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://rextester.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="Languages">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Java" />
+          <xs:enumeration value="Python" />
+          <xs:enumeration value="C" />
+          <xs:enumeration value="CPP" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="DoWork">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="Program" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="Language" type="s0:Languages" />
+            <xs:element minOccurs="0" maxOccurs="1" name="user" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="pass" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="bytes" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Errors_Bytes" type="xs:base64Binary" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Warnings" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Warnings_Bytes" type="xs:base64Binary" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Output" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Output_Bytes" type="xs:base64Binary" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Stats" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Exit_Status" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Exit_Code" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="System_Error" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DoWorkResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="DoWorkResult" type="s0:Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Sum">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="a" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="b" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SumResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="SumResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Result" nillable="true" type="s0:Result" />
+      <xs:element name="int" type="xs:int" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://rextester.com/AbstractTypes" targetNamespace="http://rextester.com/AbstractTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xs:simpleType name="Languages">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Java" />
+          <xs:enumeration value="Python" />
+          <xs:enumeration value="C" />
+          <xs:enumeration value="CPP" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </types>
+  <message name="DoWorkSoapIn">
+    <part name="parameters" element="s0:DoWork" />
+  </message>
+  <message name="DoWorkSoapOut">
+    <part name="parameters" element="s0:DoWorkResponse" />
+  </message>
+  <message name="SumSoapIn">
+    <part name="parameters" element="s0:Sum" />
+  </message>
+  <message name="SumSoapOut">
+    <part name="parameters" element="s0:SumResponse" />
+  </message>
+  <message name="DoWorkHttpGetIn">
+    <part name="Program" type="s:string" />
+    <part xmlns:q1="http://rextester.com/AbstractTypes" name="Language" type="q1:Languages" />
+    <part name="user" type="s:string" />
+    <part name="pass" type="s:string" />
+    <part name="bytes" type="s:boolean" />
+  </message>
+  <message name="DoWorkHttpGetOut">
+    <part name="Body" element="s0:Result" />
+  </message>
+  <message name="SumHttpGetIn">
+    <part name="a" type="s:int" />
+    <part name="b" type="s:int" />
+  </message>
+  <message name="SumHttpGetOut">
+    <part name="Body" element="s0:int" />
+  </message>
+  <message name="DoWorkHttpPostIn">
+    <part name="Program" type="s:string" />
+    <part xmlns:q2="http://rextester.com/AbstractTypes" name="Language" type="q2:Languages" />
+    <part name="user" type="s:string" />
+    <part name="pass" type="s:string" />
+    <part name="bytes" type="s:boolean" />
+  </message>
+  <message name="DoWorkHttpPostOut">
+    <part name="Body" element="s0:Result" />
+  </message>
+  <message name="SumHttpPostIn">
+    <part name="a" type="s:int" />
+    <part name="b" type="s:int" />
+  </message>
+  <message name="SumHttpPostOut">
+    <part name="Body" element="s0:int" />
+  </message>
+  <portType name="ServiceSoap">
+    <operation name="DoWork">
+      <input message="s0:DoWorkSoapIn" />
+      <output message="s0:DoWorkSoapOut" />
+    </operation>
+    <operation name="Sum">
+      <input message="s0:SumSoapIn" />
+      <output message="s0:SumSoapOut" />
+    </operation>
+  </portType>
+  <portType name="ServiceSoap12">
+    <operation name="DoWork">
+      <input message="s0:DoWorkSoapIn" />
+      <output message="s0:DoWorkSoapOut" />
+    </operation>
+    <operation name="Sum">
+      <input message="s0:SumSoapIn" />
+      <output message="s0:SumSoapOut" />
+    </operation>
+  </portType>
+  <portType name="ServiceHttpGet">
+    <operation name="DoWork">
+      <input message="s0:DoWorkHttpGetIn" />
+      <output message="s0:DoWorkHttpGetOut" />
+    </operation>
+    <operation name="Sum">
+      <input message="s0:SumHttpGetIn" />
+      <output message="s0:SumHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="ServiceHttpPost">
+    <operation name="DoWork">
+      <input message="s0:DoWorkHttpPostIn" />
+      <output message="s0:DoWorkHttpPostOut" />
+    </operation>
+    <operation name="Sum">
+      <input message="s0:SumHttpPostIn" />
+      <output message="s0:SumHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="ServiceSoap" type="s0:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="DoWork">
+      <soap:operation soapAction="http://rextester.com/DoWork" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Sum">
+      <soap:operation soapAction="http://rextester.com/Sum" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="ServiceSoap12" type="s0:ServiceSoap12">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="DoWork">
+      <soap12:operation soapAction="http://rextester.com/DoWork" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Sum">
+      <soap12:operation soapAction="http://rextester.com/Sum" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="ServiceHttpGet" type="s0:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <operation name="DoWork">
+      <http:operation location="/DoWork" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Sum">
+      <http:operation location="/Sum" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="ServiceHttpPost" type="s0:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <operation name="DoWork">
+      <http:operation location="/DoWork" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Sum">
+      <http:operation location="/Sum" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Service">
+    <port name="ServiceSoap" binding="s0:ServiceSoap">
+      <soap:address location="http://226589.s.dedikuoti.lt/service/Service.asmx" />
+    </port>
+    <port name="ServiceSoap12" binding="s0:ServiceSoap12">
+      <soap12:address location="http://226589.s.dedikuoti.lt/service/Service.asmx" />
+    </port>
+    <port name="ServiceHttpGet" binding="s0:ServiceHttpGet">
+      <http:address location="http://226589.s.dedikuoti.lt/service/Service.asmx" />
+    </port>
+    <port name="ServiceHttpPost" binding="s0:ServiceHttpPost">
+      <http:address location="http://226589.s.dedikuoti.lt/service/Service.asmx" />
+    </port>
+  </service>
+</definitions>

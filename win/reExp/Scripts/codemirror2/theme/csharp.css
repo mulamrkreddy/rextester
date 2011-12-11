@@ -1,0 +1,25 @@
+﻿.cm-s-csharp span.cm-keyword {color: blue;}
+.cm-s-csharp span.cm-atom {color: blue;}
+.cm-s-csharp span.cm-number {color: black;}
+.cm-s-csharp span.cm-def {color: #00CCCC;}
+.cm-s-csharp span.cm-variable {color: black;}
+.cm-s-csharp span.cm-variable-2 {color: black;}
+.cm-s-csharp span.cm-variable-3 {color:black;}
+.cm-s-csharp span.cm-property {color: black;}
+.cm-s-csharp span.cm-operator {color: purple;}
+.cm-s-csharp span.cm-comment {color: green;}
+.cm-s-csharp span.cm-string {color: red;}
+.cm-s-csharp span.cm-string-2 {color: red;}
+.cm-s-csharp span.cm-meta {color: green;}
+.cm-s-csharp span.cm-error {color: red;}
+.cm-s-csharp span.cm-qualifier {color: blue;}
+.cm-s-csharp span.cm-builtin {color: blue;}
+.cm-s-csharp span.cm-bracket {color: gray;}
+.cm-s-csharp span.cm-tag {color: #170;}
+.cm-s-csharp span.cm-attribute {color: black;}
+
+.CodeMirror-matchingbracket{
+	border:1px solid #cccccc;
+	background: #cccccc;
+	color:black !important;
+}

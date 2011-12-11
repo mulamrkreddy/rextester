@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:scl="http://schemas.xmlsoap.org/disco/scl/" xmlns="http://schemas.xmlsoap.org/disco/">
+  <scl:contractRef docRef="http://226589.s.dedikuoti.lt/service/Service.asmx" ref="http://226589.s.dedikuoti.lt/service/Service.asmx?wsdl" />
+  <soap xmlns:q1="http://rextester.com/" binding="q1:ServiceSoap" address="http://226589.s.dedikuoti.lt/service/Service.asmx" xmlns="http://schemas/xmlsoap.org/disco/schema/soap/" />
+  <soap xmlns:q2="http://rextester.com/" binding="q2:ServiceSoap12" address="http://226589.s.dedikuoti.lt/service/Service.asmx" xmlns="http://schemas/xmlsoap.org/disco/schema/soap/" />
+</discovery>
